@@ -26,14 +26,22 @@
     <script src="http://malsup.github.io/jquery.cycle2.carousel.js"></script>
     <script>$.fn.cycle.defaults.autoSelector = ".cycle-slideshow";</script>
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script>
       $(document).ready(function(){
-        $('.post_list').bxSlider();
+        $('.post_list').bxSlider({
+          minSlides: 1,
+          maxSlides: 3,
+          moveSlides: 1,
+          slideWidth: 370,
+          slideMargin: 30,
+          pager: false,
+          nextSelector: '.controls .next',
+          prevSelector: '.controls .prev'
+        });
       });
     </script>
-    
+
     <link rel="stylesheet" href="css/defaults.css" />
   </head>
   <body>
@@ -471,13 +479,20 @@
             </li>
           </ul>
           <p class="controls">
-            <a href="" class="prev">Prev button</a>
-            <a href="" class="next">Next button</a>
+            <span href="" class="prev"></span>
+            <span href="" class="next"></span>
           </p>
       </section>
 
       <section class="patners">
-        <div class="container"></div>
+        <div class="container">
+          <ul>
+            <li><a href=""><img src="./images/partners_barbers.png" alt="barbers"></a></li>
+            <li><a href=""><img src="./images/partners_delicious.png" alt="partners_delicious"></a></li>
+            <li><a href=""><img src="./images/partners_desingers.png" alt="partners_desingers"></a></li>
+            <li><a href=""><img src="./images/partners_royal.png" alt="partners_royal"></a></li>
+          </ul>
+        </div>
       </section>
       <!--//patners-->
     </main>
